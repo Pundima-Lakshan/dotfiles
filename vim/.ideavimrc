@@ -15,6 +15,9 @@ set incsearch
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
+" turn relative line numbers on
+set relativenumber number
+
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
 
 " Highlight copied text
