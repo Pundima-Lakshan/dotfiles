@@ -12,6 +12,10 @@ set scrolloff=5
 " Do incremental searching.
 set incsearch
 
+" Consider cases only if search text contains uppercase letters
+set noic
+set smartcase
+
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
@@ -57,6 +61,12 @@ nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
+
+" Remove arrow keys from navigation
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 " Nice to have
 nnoremap <leader>w :w!<CR>
