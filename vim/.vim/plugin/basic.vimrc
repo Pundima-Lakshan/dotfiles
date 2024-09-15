@@ -1,10 +1,3 @@
-" .ideavimrc is a configuration file for IdeaVim plugin. It uses
-"   the same commands as the original .vimrc configuration.
-" You can find a list of commands here: https://jb.gg/h38q75
-" Find more examples here: https://jb.gg/share-ideavimrc
-
-runtime! archlinux.vim
-
 "" -- Suggested options --
 " Show a few lines of context around the cursor. Note that this makes the
 " text scroll if you mouse-click near the start or end of the window.
@@ -25,7 +18,14 @@ let mapleader = " "
 " Enable search highlighting
 set hlsearch
 
+" Consider cases only if search text contains uppercase letters
+set ic
+set smartcase
+
 " Normal mode key bindings
+
+" Clear search results
+nnoremap <C-l> :noh<CR>
 
 " Switch between buffers
 nnoremap <S-h> :bprevious<CR>
@@ -40,6 +40,12 @@ nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
+
+" Remove arrow keys from navigation
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 " Nice to have
 nnoremap <leader>w :w!<CR>
@@ -68,10 +74,6 @@ vnoremap <leader>c :action CommentByLineComment<CR>
 " Remap 'c' to change without affecting the register
 nnoremap c "_c
 vnoremap c "_c
-
-" Remap 'x' to delete without affecting the register
-nnoremap x "_x
-vnoremap x "_x
 
 " Remap 'd' in Visual mode to delete to the black hole register
 vnoremap d "_d

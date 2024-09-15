@@ -12,10 +12,6 @@ set scrolloff=5
 " Do incremental searching.
 set incsearch
 
-" Consider cases only if search text contains uppercase letters
-set noic
-set smartcase
-
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
@@ -46,7 +42,14 @@ let mapleader = " "
 " Enable search highlighting
 set hlsearch
 
+" Consider cases only if search text contains uppercase letters
+set ic
+set smartcase
+
 " Normal mode key bindings
+
+" Clear search results
+nnoremap <C-l> :noh<CR>
 
 " Switch between buffers
 nnoremap <S-h> :bprevious<CR>
@@ -95,10 +98,6 @@ vnoremap <leader>c :action CommentByLineComment<CR>
 " Remap 'c' to change without affecting the register
 nnoremap c "_c
 vnoremap c "_c
-
-" Remap 'x' to delete without affecting the register
-nnoremap x "_x
-vnoremap x "_x
 
 " Remap 'd' in Visual mode to delete to the black hole register
 vnoremap d "_d
