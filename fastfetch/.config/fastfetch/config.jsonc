@@ -57,6 +57,11 @@
       "type": "custom",
       "key": "Network",
       "format": "nmtui"
+    },
+    {
+      "type": "custom",
+      "key": "Display",
+      "format": "xrandr, arandr"
     }
   ]
 }
