@@ -60,8 +60,18 @@
     },
     {
       "type": "custom",
-      "key": "Display",
+      "key": "Display Layout",
       "format": "xrandr, arandr"
+    },
+    {
+      "type": "custom",
+      "key": "Display Brightness",
+      "format": "brightnessctl s 80%"
+    },
+    {
+      "type": "custom",
+      "key": "Bash History",
+      "format": "ctrl + r"
     }
   ]
 }
