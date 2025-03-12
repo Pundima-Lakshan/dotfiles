@@ -10,10 +10,11 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 
 # PATH modification
-#export PATH="/opt/idea-IU-233.15619.7/bin:$PATH"
+export PATH="/opt/idea-IU-233.15619.7/bin:$PATH"
 export PATH="/home/pundima/eclipse/java-2024-09/eclipse:$PATH"
-export PATH="/opt/idea-IU-242.21829.142/bin:$PATH"
+#export PATH="/opt/idea-IU-242.21829.142/bin:$PATH"
 export PATH="/opt/WebStorm-242.21829.149/bin:$PATH"
+export PATH="/opt/JetBrains Rider-2024.2.7/bin:$PATH"
 
 # yazi shell wrapper
 # change the current working directory when exiting yazi
