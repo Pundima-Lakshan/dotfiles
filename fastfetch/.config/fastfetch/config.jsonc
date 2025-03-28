@@ -3,8 +3,8 @@
   "display": {
     "size": {
       "maxPrefix": "MB",
-      "ndigits": 0
-    }
+      "ndigits": 0,
+    },
   },
   "modules": [
     "title",
@@ -13,7 +13,7 @@
     "host",
     {
       "type": "kernel",
-      "format": "{release}"
+      "format": "{release}",
     },
     "uptime",
     "packages",
@@ -21,7 +21,7 @@
     {
       "type": "display",
       "compactType": "original",
-      "key": "Resolution"
+      "key": "Resolution",
     },
     "de",
     "wm",
@@ -31,47 +31,52 @@
     "terminal",
     {
       "type": "terminalfont",
-      "format": "{/name}{-}{/}{name}{?size} {size}{?}"
+      "format": "{/name}{-}{/}{name}{?size} {size}{?}",
     },
     "cpu",
     {
       "type": "gpu",
-      "key": "GPU"
+      "key": "GPU",
     },
     {
       "type": "memory",
-      "format": "{} / {}"
+      "format": "{} / {}",
     },
     "break",
     {
       "type": "custom",
       "key": "Bluetooth",
-      "format": "blueman-manager"
+      "format": "blueman-manager",
     },
     {
       "type": "custom",
       "key": "Audio",
-      "format": "pavucontrol"
+      "format": "pavucontrol",
     },
     {
       "type": "custom",
       "key": "Network",
-      "format": "nmtui"
+      "format": "nmtui",
     },
     {
       "type": "custom",
       "key": "Display Layout",
-      "format": "xrandr, arandr"
+      "format": "xrandr, arandr",
     },
     {
       "type": "custom",
       "key": "Display Brightness",
-      "format": "brightnessctl s 80%"
+      "format": "brightnessctl s 80%",
     },
     {
       "type": "custom",
       "key": "Bash History",
-      "format": "ctrl + r"
-    }
-  ]
+      "format": "ctrl + r",
+    },
+    {
+      "type": "custom",
+      "key": "Fan Speed",
+      "format": "sudo nbfc stop",
+    },
+  ],
 }
