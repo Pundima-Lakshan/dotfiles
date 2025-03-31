@@ -12,7 +12,7 @@
 for_window [class="^.*"] border pixel 3
 
 # Inner gaps for all windows: space between two adjacent windows (or split containers).
-gaps inner 5
+gaps inner 0 
 
 # Outer gaps for all windows: space along the screen edges.
 gaps outer 0

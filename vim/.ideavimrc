@@ -107,3 +107,120 @@ nnoremap d "_d
 
 " Remap 'p' in visual mode to avoid replacing the register with the deleted text
 vnoremap p "_c<Esc>
+
+" ~/.ideavimrc
+
+" Set leader key (optional, but matches your Neovim setup)
+set leader=<Space>
+
+" --- Tab (Buffer) Management ---
+
+" Save current tab (like :w)
+" Maps <Space>bs to IntelliJ's SaveDocument action
+map <leader>bs <Action>(SaveDocument)
+" Alternative: Save all files
+" map <leader>bs <Action>(SaveAll)
+
+" Close current tab (like :bd)
+" Maps <Space>bd to IntelliJ's CloseActiveEditor action
+map <leader>bd <Action>(CloseEditor) " Or CloseActiveEditor
+
+" Switch to previously active tab (like :e# or <Space>bb)
+" Maps <Space>bb to RecentFiles action, which is similar
+map <leader>bb <Action>(RecentFiles)
+
+" --- Searching ---
+
+" Find Files (Filename Search - like Telescope find_files)
+" Maps <Space>ff to IntelliJ's GotoFile action (usually Ctrl+Shift+N)
+map <leader>ff <Action>(GotoFile)
+
+" Search in current file (Tab Content - like / or ?)
+" Standard Vim / and ? usually work for this.
+" If you want <Space>sw for consistency:
+map <leader>sw <Action>(Find) " Maps to IntelliJ's Find action (Ctrl+F)
+
+" Search in All Files (Project Grep - like Telescope live_grep)
+" Maps <Space>sg to IntelliJ's FindInPath action (Ctrl+Shift+F)
+map <leader>sg <Action>(FindInPath)
+" You also had <Space>/ mapped to grep, you could add this too:
+map <leader>/ <Action>(FindInPath)
+
+" Replace in current file (Tab Content)
+" Standard Vim :%s/old/new/g works.
+" For consistency with <Space>sr:
+map <leader>sr <Action>(Replace) " Maps to IntelliJ's Replace action (Ctrl+R)
+
+" Replace in All Files (Project Replace)
+" Let's use <Space>sR (Shift+R) for global replace, as <Space>sr is local
+map <leader>sR <Action>(ReplaceInPath) " Maps to IntelliJ's ReplaceInPath action (Ctrl+Shift+R)
+
+" --- Code Navigation ---
+
+" Go to Definition (like LSP gd)
+" Standard 'gd' often works in IdeaVim if configured. If not, map explicitly.
+" IntelliJ's GotoDeclaration action (Ctrl+B or Ctrl+Click)
+map gd <Action>(GotoDeclaration)
+
+" Go to Occurrences/Usages (like LSP gr or Trouble)
+" Standard 'gr' might work. Alternatively, use <Space>cS like your Trouble mapping.
+" IntelliJ's ShowUsages action (Alt+F7 for popup/list) is often useful.
+map <leader>cS <Action>(ShowUsages)
+" Or map 'gr' if it doesn't work by default:
+" map gr <Action>(ShowUsages)
+" Alternative: FindUsages opens the full tool window (Shift+Alt+F7)
+" map <leader>cS <Action>(FindUsages)
+
+" --- Project & UI ---
+
+" Open/Close Project Directory View (like Neotree <Space>e)
+" Maps <Space>e to IntelliJ's ActivateProjectToolWindow action (Alt+1)
+map <leader>e <Action>(ActivateProjectToolWindow)
+
+" Open/Close Terminal (like <Space>ft)
+" Maps <Space>ft to IntelliJ's ActivateTerminalToolWindow action (Alt+F12)
+map <leader>ft <Action>(ActivateTerminalToolWindow)
+
+" --- Other Sensible Shortcuts ---
+
+" Reformat Code (like <Space>cf)
+" Maps <Space>cf to IntelliJ's ReformatCode action (Ctrl+Alt+L)
+map <leader>cf <Action>(ReformatCode)
+
+" Show Intention Actions / Quick Fixes (like LSP code actions)
+" Standard Alt+Enter usually works. If you want a Vim mapping:
+map <leader>ca <Action>(ShowIntentionActions) " ca for Code Actions
+
+" Rename (like LSP rename <Space>cr)
+" Standard Shift+F6 usually works. If you want a Vim mapping:
+map <leader>cr <Action>(RenameElement) " cr for Code Rename
+
+" Git: Show Version Control window (closest generic to Lazygit/Telescope Git)
+map <leader>gg <Action>(ActivateVersionControlToolWindow)
+map <leader>gs <Action>(ActivateVersionControlToolWindow)
+
+" Git: Commit
+map <leader>gc <Action>(CheckinProject) " Ctrl+K
+
+" Git: Annotate / Blame (like <Space>gb)
+map <leader>gb <Action>(Annotate)
+
+" Navigate Tabs (like H/L or [b/]b for buffers)
+" Map H/L directly to Previous/Next Tab actions
+map H <Action>(PreviousTab)
+map L <Action>(NextTab)
+" Alternative using [b and ]b like your Neovim setup
+" map [b <Action>(PreviousTab)
+" map ]b <Action>(NextTab)
+
+" Navigate Diagnostics/Errors (like [d/]d)
+map [d <Action>(GotoPreviousError) " F2 / Shift+F2 are defaults
+map ]d <Action>(GotoNextError)
+
+" Window Splitting (different concept than tabs/buffers, but often used)
+" Map <Space>| and <Space>- like your Neovim splits
+map <leader>\| <Action>(SplitVertically)
+map <leader>- <Action>(SplitHorizontally)
+" Note: <C-W> mappings often work by default in IdeaVim for splits
+
+" --- End of ~/.ideavimrc ---
