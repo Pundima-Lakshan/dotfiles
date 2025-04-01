@@ -5,3 +5,7 @@ if type "xrandr"; then
 else
   polybar --reload toph &
 fi
+
+# Set brightness permissions when starting the session
+sudo chmod g+w /sys/class/backlight/intel_backlight/brightness
+sudo chgrp video /sys/class/backlight/intel_backlight/brightness
