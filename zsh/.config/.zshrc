@@ -67,3 +67,28 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# tmux
+tkill() {
+  if [ $# -eq 0 ]; then
+    echo "Usage: tkill <session-name1> <session-name2> ..."
+    return 1
+  fi
+  
+  for session in "$@"; do
+    echo "Killing session: $session"
+    tmux kill-session -t "$session"
+  done
+}
+alias tkillall="tmux kill-server"
+alias tlist="tmux list-sessions"
+
+# tmuxifier
+export PATH="$HOME/.tmuxifier/bin:$PATH"
+eval "$(tmuxifier init -)"
+alias tm='tmuxifier'
+export EDITOR='nvim'
+export TMUXIFIER_LAYOUT_PATH="$HOME/dotfiles/tmuxifier-layouts"
+
+# nvim
+alias nv='nvim'
