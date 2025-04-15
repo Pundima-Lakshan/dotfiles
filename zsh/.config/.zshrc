@@ -92,3 +92,6 @@ export TMUXIFIER_LAYOUT_PATH="$HOME/dotfiles/tmuxifier-layouts"
 
 # nvim
 alias nv='nvim'
+
+# go
+export PATH="$PATH:/usr/local/go/bin"
