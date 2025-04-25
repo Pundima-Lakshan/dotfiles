@@ -69,7 +69,7 @@ esac
 # pnpm end
 
 # tmux
-tkill() {
+tks() {
   if [ $# -eq 0 ]; then
     echo "Usage: tkill <session-name1> <session-name2> ..."
     return 1
@@ -80,8 +80,8 @@ tkill() {
     tmux kill-session -t "$session"
   done
 }
-alias tkillall="tmux kill-server"
-alias tlist="tmux list-sessions"
+alias tk="tmux kill-server"
+alias tls="tmux list-sessions"
 
 # tmuxifier
 export PATH="$HOME/.tmuxifier/bin:$PATH"
@@ -90,8 +90,16 @@ alias tm='tmuxifier'
 export EDITOR='nvim'
 export TMUXIFIER_LAYOUT_PATH="$HOME/dotfiles/tmuxifier-layouts"
 
-# nvim
-alias nv='nvim'
-
 # go
 export PATH="$PATH:/usr/local/go/bin"
+
+
+# pacman 
+pacman() {
+    if [[ $1 == "-S" ]]; then
+        shift
+        sudo command pacman -Syu "$@"
+    else
+        sudo command pacman "$@"
+    fi
+}
