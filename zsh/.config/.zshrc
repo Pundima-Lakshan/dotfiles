@@ -16,8 +16,12 @@ bindkey -e
 autoload -Uz vcs_info
 precmd() { vcs_info }
 
-autoload -Uz compinit
-compinit
+# autoload -Uz compinit
+# compinit
+
+if [ -f /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh ]; then
+  source /usr/share/zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+fi
 
 zstyle ':vcs_info:git:*' formats '%b '
 
@@ -45,6 +49,11 @@ function y() {
 # Check if fastfetch exists before trying to run it
 if command -v fastfetch &>/dev/null; then
     fastfetch
+fi
+
+# Check if installed before sourcing
+if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 # Check if nvm is installed before sourcing it

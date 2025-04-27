@@ -15,6 +15,7 @@ if initialize_session "gtreact"; then
   select_window "client-term"
   run_cmd "cd gtfleet.client"
   split_h 50
+  run_cmd "cd gtfleet.client" 2
 
   new_window "server-edit"
   select_window "server-edit"
