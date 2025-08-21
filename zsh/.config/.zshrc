@@ -69,6 +69,17 @@ alias a='arandr'
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/pundima/.zshrc'
 
+# cuda
+export CUDA_HOME="/opt/cuda"
+export FORCE_CUDA=0
+
+# nvidea cub - deprecated
+export CUB_HOME="/home/pundima/cub-2.1.0"
+
+# gcc
+export CC=gcc-14
+export CXX=g++-14
+
 # pnpm
 export PNPM_HOME="/home/pundima/.local/share/pnpm"
 case ":$PATH:" in
@@ -102,6 +113,8 @@ export TMUXIFIER_LAYOUT_PATH="$HOME/dotfiles/tmuxifier-layouts"
 # go
 export PATH="$PATH:/usr/local/go/bin"
 
+# prompty
+export PATH="$PATH:/home/pundima/dev/prompty" 
 
 # pacman 
 pacman() {
@@ -112,3 +125,7 @@ pacman() {
         sudo command pacman "$@"
     fi
 }
+
+# dotnet
+# dotnet tools
+export PATH="$PATH:$HOME/.dotnet/tools"

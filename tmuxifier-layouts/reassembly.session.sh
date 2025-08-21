@@ -31,6 +31,19 @@ if initialize_session "reassembly"; then
   run_cmd "cd data"
   run_cmd "nvim"
 
+  new_window "reassembly-basic"
+  select_window "reassembly-basic"
+  run_cmd "cd reassembly/python"
+  run_cmd "source .venv/bin/activate"
+  run_cmd "cd ../../reassembly-basic"
+  run_cmd "nvim"
+
+  new_window "reassembly-basic-term"
+  select_window "reassembly-basic-term"
+  run_cmd "cd reassembly/python"
+  run_cmd "source .venv/bin/activate"
+  run_cmd "cd ../../reassembly-basic"
+
   select_window "code"
 fi
 
