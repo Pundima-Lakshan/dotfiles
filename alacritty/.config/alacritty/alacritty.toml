@@ -22,5 +22,5 @@ style = "Regular"
 
 [general]
 import = [
-  "~/.config/alacritty/dracula_plus.toml"
+  "~/.config/alacritty/tokyonight_night.toml"
 ]
