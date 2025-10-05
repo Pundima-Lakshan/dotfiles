@@ -1,2 +1,2 @@
-You know what dotfiles are right ? 
+You know what dotfiles are right ?
 (hint - linux configurations)

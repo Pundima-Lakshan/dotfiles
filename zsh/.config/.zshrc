@@ -26,7 +26,7 @@ fi
 zstyle ':vcs_info:git:*' formats '%b '
 
 setopt PROMPT_SUBST
-PROMPT='%F{green}%*%f %F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
+PROMPT='%F{blue}%~%f %F{red}${vcs_info_msg_0_}%f$ '
 
 # Aliases
 alias ls='ls --color=auto'
@@ -47,9 +47,9 @@ function y() {
 }
 
 # Check if fastfetch exists before trying to run it
-if command -v fastfetch &>/dev/null; then
-    fastfetch
-fi
+# if command -v fastfetch &>/dev/null; then
+#     fastfetch
+# fi
 
 # Check if installed before sourcing
 if [ -f /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
@@ -117,13 +117,36 @@ export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:/home/pundima/dev/prompty" 
 
 # pacman 
+_pacman_bin="$(command -v pacman)"
+
 pacman() {
-    if [[ $1 == "-S" ]]; then
-        shift
-        sudo command pacman -Syu "$@"
-    else
-        sudo command pacman "$@"
-    fi
+    case "$1" in
+        -S|-S[!sS]*)
+            shift
+            echo "This will run a full system upgrade (-Syu) before installing."
+            printf "Proceed? [y/N]: "
+            read ans
+            if [[ "$ans" =~ ^[Yy]$ ]]; then
+                sudo "$_pacman_bin" -Syu "$@"
+            else
+                echo "Aborted."
+            fi
+            ;;
+        -R|-R[!sS]*)
+            shift
+            echo "This will remove packages with configs and unneeded dependencies (-Rns)."
+            printf "Proceed? [y/N]: "
+            read ans
+            if [[ "$ans" =~ ^[Yy]$ ]]; then
+                sudo "$_pacman_bin" -Rns "$@"
+            else
+                echo "Aborted."
+            fi
+            ;;
+        *)
+            sudo "$_pacman_bin" "$@"
+            ;;
+    esac
 }
 
 # dotnet
