@@ -1,1 +1,0 @@
-/home/pundima/.config/omarchy/current/theme/neovim.lua
