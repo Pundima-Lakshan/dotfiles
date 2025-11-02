@@ -62,3 +62,9 @@ vim.keymap.set("n", "<leader>rd", function()
     vim.notify("debug.bat not found in " .. root_dir, vim.log.levels.ERROR)
   end
 end, { desc = "Run debug.bat in project root" })
+
+vim.keymap.set("n", "<leader>bs", ":w<CR>", {
+  noremap = true,
+  silent = true,
+  desc = "Save current buffer",
+})
