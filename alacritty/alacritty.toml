@@ -7,14 +7,24 @@ TERM = "xterm-256color"
 normal = { family = "CaskaydiaMono Nerd Font" }
 bold = { family = "CaskaydiaMono Nerd Font" }
 italic = { family = "CaskaydiaMono Nerd Font" }
-size = 9
+size = 14
 
 [window]
 padding.x = 14
 padding.y = 14
 decorations = "None"
 
+[terminal.shell]
+program = "powershell.exe"
+args = [
+    "-NoExit",
+    "-ExecutionPolicy", "Bypass",
+    "-Command", 
+    "Import-Module 'C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll'; Enter-VsDevShell -VsInstanceId 2af9171f -DevCmdArguments '-arch=x64'"
+]
+
 [keyboard]
 bindings = [
 { key = "F11", action = "ToggleFullscreen" }
 ]
+
