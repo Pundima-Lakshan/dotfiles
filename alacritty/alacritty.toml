@@ -25,6 +25,7 @@ args = [
 
 [keyboard]
 bindings = [
-{ key = "F11", action = "ToggleFullscreen" }
+{ key = "F11", action = "ToggleFullscreen" },
+{ key = "F", mods = "Control|Shift", action = "ReceiveChar" },
+{ key = "N", mods = "Control|Shift", action = "ReceiveChar" },
 ]
-

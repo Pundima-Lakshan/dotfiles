@@ -43,3 +43,13 @@ vim.api.nvim_set_hl(0, "NotifyERRORBorder", { bg = "none" })
 vim.api.nvim_set_hl(0, "NotifyWARNBorder", { bg = "none" })
 vim.api.nvim_set_hl(0, "NotifyTRACEBorder", { bg = "none" })
 vim.api.nvim_set_hl(0, "NotifyDEBUGBorder", { bg = "none" })
+
+-- LSP document highlight (variable occurrences under cursor)
+vim.api.nvim_set_hl(0, "LspReferenceText", { bg = "#4a8f4a", fg = "#cdd6f4" })
+vim.api.nvim_set_hl(0, "LspReferenceRead", { bg = "#4a8f4a", fg = "#cdd6f4" })
+vim.api.nvim_set_hl(0, "LspReferenceWrite", { bg = "#4a8f4a", fg = "#cdd6f4" })
+
+-- Search highlights
+vim.api.nvim_set_hl(0, "Search", { bg = "#4a8f4a", fg = "#cdd6f4" })
+vim.api.nvim_set_hl(0, "IncSearch", { bg = "#6fbf6f", fg = "#1e1e2e" })
+vim.api.nvim_set_hl(0, "CurSearch", { bg = "#6fbf6f", fg = "#1e1e2e" })

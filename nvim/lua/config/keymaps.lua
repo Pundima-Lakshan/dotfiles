@@ -91,9 +91,17 @@ vim.keymap.set("v", "<C-f>", function()
 end, { desc = "Find selection in file" })
 
 -- Find in all files (snacks picker grep)
-vim.keymap.set("n", "<C-S-f>", function()
+vim.keymap.set("n", "<leader>sw", function()
   Snacks.picker.grep()
-end, { desc = "Find in all files" })
-vim.keymap.set("v", "<C-S-f>", function()
+end, { desc = "Find in all files (grep)" })
+vim.keymap.set("v", "<leader>sw", function()
   Snacks.picker.grep({ search = get_visual_selection() })
 end, { desc = "Find selection in all files" })
+
+-- Save buffer
+vim.keymap.set("n", "<C-s>", "<cmd>w<cr>", { desc = "Save buffer" })
+
+-- Close buffer
+vim.keymap.set("n", "<A-w>", function()
+  Snacks.bufdelete()
+end, { desc = "Close buffer" })
