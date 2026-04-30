@@ -65,12 +65,11 @@ nnoremap <c-f> :action GotoFile<CR>
 nnoremap <leader>h :action CallHierarchy<CR>
 nnoremap <c-s> :action FileStructurePopup<CR>
 nnoremap <c-o> :action GotoSymbol<CR>
-nnoremap gs :action GotoRelated<CR>
+nnoremap gr :action GotoRelated<CR>
 nnoremap gu :action FindUsages<CR>
 nnoremap gc :action GotoClass<CR>
 nnoremap gi :action GotoImplementation<CR>
-nnoremap gd :action GotToDeclaration<CR>
-nnoremap gp :action GotToSuperMethod<CR>
+nnoremap gs :action GotToSuperMethod<CR>
 nnoremap gt :action GotoTest<CR>
 nnoremap gb :action Back<CR>
 nnoremap gf :action Forward<CR>
@@ -102,8 +101,24 @@ Plug 'machakann/vim-highlightedyank'
 
 Plug 'tpope/vim-commentary'
 
+Plug 'tpope/vim-surround'
+
+Plug 'chrisbra/matchit'
+
 Plug 'easymotion/vim-easymotion'
-map ss <Plug>(easymotion-s)
+map f <Plug>(easymotion-s)
 
 Plug 'preservim/nerdtree'
 map <c-e> :NERDTreeToggle<CR>
+
+" Modify default behavior of d, c, s, and p to not copy deleted text into the clipboard
+nnoremap dd "_dd
+nnoremap dw "_dw
+nnoremap D "_D
+nnoremap d "_d
+nnoremap c "_c
+nnoremap C "_C
+nnoremap s "_s
+vnoremap d "_d
+vnoremap c "_c
+vnoremap p "_dP
